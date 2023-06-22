@@ -3,11 +3,16 @@
 ****************************************/
 .transform-demo > div {
   height: 40px;
-  background: salmon;
+  background:  salmon;
   width: 20%;
   margin: auto;
   display: inline-block;
+  transform: translate(150px);
+  opacity: 0.5;
 }
+
+  
+
 
 /****************************************
 * Transition
@@ -18,10 +23,17 @@
   width: 200px;
   height: 200px;
   filter: grayscale(100%);
+  transition: 5s;  /*delay the color*/
+  
+
 
 }
 
 .transition-demo img:hover {
+  filter: none ;
+  transform: scale(1.25)rotate(360deg);
+  
+
 
 }
 
@@ -35,11 +47,34 @@
   width: 500px;
   margin: auto;
   background-color: palegreen;
+  animation-name:sale-bar ;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+  animation-iteration-count: 10; /* loop of animation for 10 times  */
 
 }
 
 @keyframes sale-bar {
-  0% { background-color: lightgreen; width: 450px }
-  75% { background-color: #FF033E; width: 125x }
-  100% { background-color: crimson; width: 10px }
+  /* 0% { background-color: lightgreen; width: 450px } */
+  /* 25% { background-color: #FE; width: 125x } */
+  /* 50% { background-color: #FF033E; width: 125x } */
+  /* 75% { background-color: #FF033E; width: 125x } */
+  /* 100% { background-color: crimson; width: 10px } */
+ 
+    /* 0% { background-color: lightgreen; width: 450px} */
+    /* 25% { background-color: gold; width: 375px } */
+    /* 50% { background-color: salmon; width: 250px } */
+    /* 75% { background-color: #FF033E; width: 125x } */
+    /* 100% { background-color: crimson; width: 10px } */
+   
+      0% { background-color: lightgreen; width: 450px }
+      25% { background-color: gold; width: 375px }
+      50% { background-color: salmon; width: 250px }
+      75% { background-color: #FF033E; width: 125x; border-radius: 0; transform: scale(1) }
+      100% { background-color: crimson; width: 10px; border-radius: 100%; transform: scale(0) }
+              
+                  
+  
+
 }
